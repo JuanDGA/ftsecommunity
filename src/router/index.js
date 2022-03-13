@@ -11,14 +11,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/chat/community',
+    path: '/chat/:chat',
     name: 'Community Chat',
-    component: () => import('../views/Community.vue')
+    component: () => import('../views/Chat.vue')
   },
   {
-    path: '/aragon',
-    name: 'Aragon',
-    component: () => import('../views/Aragon.vue')
+    path: '/proposals',
+    name: 'Proposals',
+    component: () => import('../views/Voting.vue')
   },
 ]
 

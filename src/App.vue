@@ -1,14 +1,15 @@
 <template>
   <v-app>
     <v-main>
-      <v-app-bar>
-        <v-btn to="/home">Home</v-btn>
-        <v-btn to="/chat/community">Community Chat</v-btn>
-        <v-btn v-if="!account" @click="connect">Connect</v-btn>
-        <span>{{account}}</span>
+      <v-app-bar fixed color="green darken-2">
+        <v-app-bar-title class="mr-3 white--text">ECOmmunity</v-app-bar-title>
+        <v-btn color="green lighten-4" class="mx-1" to="/">Home</v-btn>
+        <v-btn color="green lighten-4" class="mx-1" to="/chat/community">Community Chat</v-btn>
+        <v-btn color="green lighten-4" class="mx-1" v-if="!account" @click="connect">Connect</v-btn>
+        <v-btn color="green lighten-4" class="mx-1"  to="/proposals" v-if="account">Proposals</v-btn>
+        <v-spacer></v-spacer>
+        <span><small>{{account}}</small></span>
       </v-app-bar>
-      <div v-if="account">
-      </div>
       <router-view/>
     </v-main>
   </v-app>
@@ -21,6 +22,7 @@ export default {
     data: () => ({
       provider: null,
       account: null,
+      web3: null,
     }),
     async mounted() {
       this.provider = await detectEth();
