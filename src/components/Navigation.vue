@@ -8,18 +8,8 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item @click="to('/community')">Community Chat</b-nav-item>
+        <b-nav-item to="/community">Community Chat</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
-
-<script>
-  export default {
-    methods: {
-      to(path) {
-        this.$router.push(path);
-      }
-    }
-  }
-</script>

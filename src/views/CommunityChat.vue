@@ -70,13 +70,21 @@ export default {
     decodeMessage(msg) {
       const messagePayload = JSON.parse(msg.payloadAsUtf8);
       this.messages.push(messagePayload);
+      this.messages.sort((e1, e2) => {
+        if (e1.date > e2.date) {
+          return 1;
+        } else if (e1.date < e2.date) {
+          return -1;
+        } else {
+          return 1;
+        }
+      })
     }
   },
   mounted() {
     const messagesUri = "/ecommunity/2/community/proto";
 
     Waku.create({bootstrap: {default: true}}).then(async waku => {
-      console.log("ksdñmfsdfsdf")
       this.loading = true;
       this.wakuStatus = "Created";
       this.waku = waku;
@@ -84,7 +92,6 @@ export default {
 
       this.waku.store.queryHistory([messagesUri], {
         callback: (retrievedMessages) => {
-          console.log("i")
           retrievedMessages.map(this.decodeMessage).filter(Boolean);
         }
       });
