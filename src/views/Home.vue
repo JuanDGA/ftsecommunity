@@ -1,11 +1,11 @@
 <template>
-  <v-row>
-    <v-col cols="12" class="text-h1 text-center mt-16 pt-16">Decentralized Recycling Service</v-col>
-    <v-col cols="12" class="pt-10 text-center text-h1 font-weight-thin  green--text">ECOmmunity</v-col>
-    <v-col offset="4" cols="4">
-      <v-img max-height="300" contain src="https://www.corvallisoregon.gov/sites/default/files/styles/gallery500/public/imageattachments/publicworks/page/18073/pw-recycling.png?itok=Y8esemWv"></v-img>
-    </v-col>
-  </v-row>
+  <div class="container text-center">
+    <h1 class="display-1">Decentralized Recycling Service</h1>
+    <h1 class="px-4 pt-4 text-center fw-light text-success display-2">ECOmmunity</h1>
+    <div class="text-center">
+      <b-img-lazy rounded src="images/medium.png"></b-img-lazy>
+    </div>
+  </div>
 </template>
 
 <script>

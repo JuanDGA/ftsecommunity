@@ -11,14 +11,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/chat/:chat',
+    path: '/community',
     name: 'Community Chat',
-    component: () => import('../views/Chat.vue')
-  },
-  {
-    path: '/proposals',
-    name: 'Proposals',
-    component: () => import('../views/Voting.vue')
+    component: () => import('../views/CommunityChat.vue')
   },
 ]
 
