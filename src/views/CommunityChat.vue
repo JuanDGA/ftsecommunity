@@ -2,8 +2,9 @@
   <div v-if="userStore.loading" style="height: 100vh" class="bg-light d-flex align-items-center flex-column justify-content-center w-100">
     <b-spinner variant="success" type="grow"></b-spinner>
     <h1 class="h1">{{wakuStatus}}</h1>
+    <div class="small fw-bold">If it takes too long, please reload the page</div>
   </div>
-  <div v-else class="container py-5 bg-light">
+  <div v-else class="container py-5 bg-light" style="height: 100vh">
     <b-container class="h-100 py-3">
       <b-row class="h-100 pb-2" align-content="end">
         <b-col>
