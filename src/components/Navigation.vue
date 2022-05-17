@@ -9,7 +9,25 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item to="/community">Community Chat</b-nav-item>
+        <button class="btn text-light" @click="openModal">{{userStore.sender || "Anonymous"}}</button>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
+
+<script>
+  import useUserStore from "@/store/userStore";
+
+  export default {
+    setup() {
+      const userStore = useUserStore();
+
+      return {userStore};
+    },
+    methods: {
+      openModal() {
+        this.userStore.selectSender = true;
+      },
+    }
+  }
+</script>
